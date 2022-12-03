@@ -26,8 +26,8 @@
 
 
 # def multi_list(list):
-#     l = len(list)//2 + 1 if len(list) % 2 != 0 else len(list)//2
-#     new_list = [list[i]*list[len(list)-i-1] for i in range(l)]
+#     l = len(list) // 2 + 1 if len(list) % 2 != 0 else len(list) // 2
+#     new_list = [list[i] * list[len(list) - i - 1] for i in range(l)]
 #     print(new_list)
 
 
@@ -60,15 +60,8 @@
 # digit = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
 # while digit > 0:
 #     ostatok.append(str(digit%2))
-#     digit //=2
+#     digit //= 2
 # print(*ostatok[::-1], sep="")
-
-# ostatok = ""
-# digit = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
-# while digit > 0:
-#     ostatok = str(digit%2) + ostatok
-#     digit //=2
-# print(ostatok)
 
 # ---------------------------------------------------
 
@@ -79,36 +72,36 @@
 # - для k = 8 список будет выглядеть 
 # так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
-def to_directions_fibonacci(num):
-    fib = {-2: -1, -1: 1, 0: 0, 1: 1}
-    i = 2
-    while i <= num:
-        fib.update({i: fib[i-2] + fib[i-1]})
-        fib.update({-i: fib[-i+2] - fib[-i+1]})
-        i += 1
-    return (fib)
-
-n = int(input("Введите число: "))
-print(to_directions_fibonacci(n), end = " ")
-
-# def fib(n):
-#     if n>=0:
-#        id_x = range(n+1)
-#        x = [0,1]
-#        for k in id_x[2:]:
-#            x.append(x[k-1] + x[k-2]) 
-#        return x[n]
-#     else:
-#        n=-(n-1)
-#        id_x = range(n+1)
-#        x = [1,0]
-#        for k in id_x[2:]:
-#            x.append(x[k-2] - x[k-1]) 
-#        x.reverse()
-#     return x[0]
-
-
+# def to_directions_fibonacci(num):
+#     fib = {-2: -1, -1: 1, 0: 0, 1: 1}
+#     i = 2
+#     while i <= num:
+#         fib.update({i: fib[i - 2] + fib[i - 1]})
+#         fib.update({-i: fib[-i + 2] - fib[-i + 1]})
+#         i += 1
+#     return (fib)
 
 # n = int(input("Введите число: "))
-# for i in range(-n, n):
-#    print(fib(i), end = " ")
+# print(to_directions_fibonacci(n), end = " ")
+
+def fib(n):
+    if n >= 0:
+       id_x = range(n + 1)
+       x = [0, 1]
+       for k in id_x[2:]:
+           x.append(x[k - 1] + x[k - 2]) 
+       return x[n]
+    else:
+       n=-(n - 1)
+       id_x = range(n + 1)
+       x = [1, 0]
+       for k in id_x[2:]:
+           x.append(x[k - 2] - x[k - 1]) 
+       x.reverse()
+    return x[0]
+
+
+
+n = int(input("Введите число: "))
+for i in range(-n, n + 1):
+   print(fib(i), end = "  ")
