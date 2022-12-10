@@ -1,3 +1,8 @@
+list = [1, 2, 3, 6]
+        # 0 1 2 3   
+print(list[4 - 1])
+
+
 # def f(x):
 #     return x**3
 
@@ -125,21 +130,21 @@
 #[1, 3, 4, 9, 19]
 
 
-import numpy as np
+# import numpy as np
  
-def is_inc(sequence):
-    return np.all(np.diff(sequence) > 0)
+# def is_inc(sequence):
+#     return np.all(np.diff(sequence) > 0)
  
-def max_inc(sequence):
-    if is_inc(sequence):
-        return sequence
+# def max_inc(sequence):
+#     if is_inc(sequence):
+#         return sequence
  
-    subs = [np.delete(sequence, i) for i in range(len(sequence))]
+#     subs = [np.delete(sequence, i) for i in range(len(sequence))]
  
-    results_sub = [max_inc(sub) for sub in subs]
-    result = max(results_sub, key=lambda s: len(s))
-    return result
+#     results_sub = [max_inc(sub) for sub in subs]
+#     result = max(results_sub, key=lambda s: len(s))
+#     return result
  
-# seq = np.array([4,5,6,0,1,7,2,8])
-seq = np.array([3, 1, 6, 8 ,9, -1, 1, 0, 19])
-print(max_inc(seq))
+# # seq = np.array([4,5,6,0,1,7,2,8])
+# seq = np.array([3, 1, 6, 8 ,9, -1, 1, 0, 19])
+# print(max_inc(seq))
