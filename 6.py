@@ -72,17 +72,17 @@
 # - для k = 8 список будет выглядеть 
 # так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
-def fibonacci(num):
-    fib = {-2: -1, -1: 1, 0: 0, 1: 1}
-    i = 2
-    while i <= num:
-        fib.update({i: fib[i - 2] + fib[i - 1]})
-        fib.update({-i: fib[-i + 2] - fib[-i + 1]})
-        i += 1
-    return (fib)
+# def fibonacci(num):
+#     fib = {-2: -1, -1: 1, 0: 0, 1: 1}
+#     i = 2
+#     while i <= num:
+#         fib.update({i: fib[i - 2] + fib[i - 1]})
+#         fib.update({-i: fib[-i + 2] - fib[-i + 1]})
+#         i += 1
+#     return (fib)
 
-n = int(input("Введите число: "))
-print(fibonacci(n), end = " ")
+# n = int(input("Введите число: "))
+# print(fibonacci(n), end = " ")
 
 
 
