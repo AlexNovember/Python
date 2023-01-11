@@ -66,6 +66,10 @@ def complex_(msg: types.Message):
     
     first_num = complex(lst[0])
     second_num = complex(lst[2])
+
+    if second_num == 0 and sign == '/':
+        bot.send_message(chat_id=msg.from_user.id, text = "Деление на 0")
+
     if sign == "+":
         result = first_num + second_num
         bot.send_message(msg.from_user.id, text=f'Сложение {result}')
