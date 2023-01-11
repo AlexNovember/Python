@@ -6,7 +6,7 @@ import os
 import codecs
 os.chdir(os.path.dirname(__file__))
 
-BOT_TOKEN = '5820047270:AAEXfYZOginRytOpBRE6FnCvqS54Z6u-uN8' # Токен Телеграм-бота
+BOT_TOKEN = '5820047270--------vqS54Z6u-uN8' # Токен Телеграм-бота
 
 bot = telebot.TeleBot(BOT_TOKEN)
  
@@ -53,6 +53,7 @@ def answer(msg: types.Message):
         bot.send_message(msg.from_user.id, text, reply_markup=keyboard)
     elif text == "2":
         bot.register_next_step_handler(msg, complex_)
+        bot.send_message(chat_id=msg.from_user.id, text = "Введите выражение используя пробел между знаками")
 
     with codecs.open('logging.txt', 'a') as lg:
         operation_time = dt.now().strftime('%H:%M')
