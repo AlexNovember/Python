@@ -41,7 +41,7 @@ def on_dysplay():
     for x, y in enumerate(str):
         str[x] = list(y.split(';'))
     j = (' '.join(str[x]))
-        bot.send_message(chat_id=msg.from_user.id, text = j)
+    bot.send_message(chat_id=msg.from_user.id, text = j)
 
 
 
